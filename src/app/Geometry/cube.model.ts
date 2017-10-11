@@ -1,4 +1,4 @@
-const THREE = require( './lib/THREE.js');
+const THREE = require( '../lib/THREE.js');
 
 export function Cube (width, height, depth) {
 

@@ -1,7 +1,7 @@
 import {Component, OnInit, HostListener} from '@angular/core';
 import {Plane} from './Geometry/plane.model';
 import {Cube} from './Geometry/cube.model';
-import * as THREE from '../lib/THREE.ts';
+const THREE = require( './lib/THREE.js');
 //import * as THREE from 'three';
 import * as $ from 'jquery';
 
