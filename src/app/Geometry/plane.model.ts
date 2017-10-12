@@ -1,4 +1,5 @@
-const THREE = require( '../lib/THREE.js');
+const THREEdemo = require( '../lib/THREE.js');
+import * as THREE from 'three';
 
 export function Plane ( width, height, segments_width = 1, segments_height = 1) {
 
@@ -22,7 +23,7 @@ export function Plane ( width, height, segments_width = 1, segments_height = 1) 
       var x = ix * segment_width - width_half;
       var y = iy * segment_height - height_half;
 
-      this.vertices.push( new THREE.Vertex( new THREE.Vector3( x, - y, 0 ) ) );
+      this.vertices.push( new THREE.Vector3( x, - y, 0 ) );
 
     }
 
@@ -37,20 +38,20 @@ export function Plane ( width, height, segments_width = 1, segments_height = 1) 
       var c = ( ix + 1 ) + gridX1 * ( iy + 1 );
       var d = ( ix + 1 ) + gridX1 * iy;
 
-      this.faces.push( new THREE.Face4( a, b, c, d ) );
-      this.uvs.push( [
-        new THREE.UV( ix / gridX, iy / gridY ),
-        new THREE.UV( ix / gridX, ( iy + 1 ) / gridY ),
-        new THREE.UV( ( ix + 1 ) / gridX, ( iy + 1 ) / gridY ),
-        new THREE.UV( ( ix + 1 ) / gridX, iy / gridY )
+      this.faces.push( new THREE.Face3( a, b, c, d ) );
+      this.faceVertexUvs.push( [
+        new THREE.Vector2( ix / gridX, iy / gridY ),
+        new THREE.Vector2( ix / gridX, ( iy + 1 ) / gridY ),
+        new THREE.Vector2( ( ix + 1 ) / gridX, ( iy + 1 ) / gridY ),
+        new THREE.Vector2( ( ix + 1 ) / gridX, iy / gridY )
       ] );
 
     }
 
   }
 
-  this.computeCentroids();
-  this.computeNormals();
+  //this.computeCentroids();
+  this.computeFaceNormals();
 
 }
 

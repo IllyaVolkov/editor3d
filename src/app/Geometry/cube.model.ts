@@ -1,4 +1,5 @@
-const THREE = require( '../lib/THREE.js');
+//const THREE = require( '../lib/THREE.js');
+import * as THREE from 'three';
 
 export function Cube (width, height, depth) {
 
@@ -27,16 +28,16 @@ export function Cube (width, height, depth) {
 
   function v(x, y, z) {
 
-    scope.vertices.push( new THREE.Vertex( new THREE.Vector3( x, y, z ) ) );
+    scope.vertices.push( new THREE.Vector3( x, y, z ) );
   }
 
   function f4(a, b, c, d) {
 
-    scope.faces.push( new THREE.Face4( a, b, c, d ) );
+    scope.faces.push( new THREE.Face3( a, b, c, d ) );
   }
 
-  this.computeCentroids();
-  this.computeNormals();
+  //this.computeCentroids();
+  this.computeFaceNormals();
 
 }
 

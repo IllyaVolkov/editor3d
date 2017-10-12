@@ -1,0 +1,14 @@
+.controls {
+  position: absolute;
+  top: 5px;
+  width: 100%;
+  text-align: center;
+}
+
+.controls .body {
+  color: #444;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  padding: 8px 10px;
+  text-transform: uppercase;
+}
